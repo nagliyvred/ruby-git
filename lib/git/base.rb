@@ -354,7 +354,7 @@ module Git
     #  @git.config('remote.remote-name.push', 'refs/heads/master:refs/heads/master')
     #
     def push_tags(remote = 'origin', opts = {})
-      self.lib.push(remote, opts)
+      self.lib.push_tags(remote, opts)
     end
 
     
