@@ -631,7 +631,7 @@ module Git
       arr_opts << '--force'  if opts[:force] || opts[:f]
       arr_opts << remote
 
-      command('push', ['--tags'] + arr_opts) if opts[:tags]
+      command('push', ['--tags'] + arr_opts) 
     end
 
     def pull(remote='origin', branch='master')
