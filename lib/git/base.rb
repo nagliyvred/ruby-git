@@ -347,6 +347,16 @@ module Git
 
       self.lib.push(remote, branch, opts)
     end
+
+    # pushes tags only to a remote repository - easiest if this is a cloned repository,
+    # otherwise you may have to run something like this first to setup the push parameters:
+    #
+    #  @git.config('remote.remote-name.push', 'refs/heads/master:refs/heads/master')
+    #
+    def push_tags(remote = 'origin', opts = {})
+      self.lib.push(remote, opts)
+    end
+
     
     # merges one or more branches into the current working branch
     #
