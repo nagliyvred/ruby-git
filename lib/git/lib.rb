@@ -626,6 +626,14 @@ module Git
       command('push', ['--tags'] + arr_opts) if opts[:tags]
     end
 
+    def push_tags(remote, opts = {})
+      arr_opts = []
+      arr_opts << '--force'  if opts[:force] || opts[:f]
+      arr_opts << remote
+
+      command('push', ['--tags'] + arr_opts) if opts[:tags]
+    end
+
     def pull(remote='origin', branch='master')
       command('pull', [remote, branch])
     end
